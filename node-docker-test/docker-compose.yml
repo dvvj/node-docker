@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  express_server:
+    image: jiajidev/express-server-sample:${IMAGE_VERSION}
+    ports:
+      - "8080:8080"
