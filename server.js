@@ -1,11 +1,14 @@
 const express = require("express");
-
+const dotenv = require("dotenv");
+dotenv.config();
+const mysql_pool = require("./db/mysql_pool");
 const app = express();
 
 app.use(express.json());
 
 const port = process.env.PORT || 8080;
 app.get("/hello", (req, res) => {
+  console.log("mysql_pool: ", mysql_pool);
   res.status(200).send("Hi");
 });
 
