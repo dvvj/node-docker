@@ -15,3 +15,16 @@ services:
       - ./mysql_data:/var/lib/mysql
       - ../mysql/mysqld_charset.cnf:/etc/mysql/conf.d/mysqld_charset.cnf
       - ../mysql/scripts/:/docker-entrypoint-initdb.d/
+  express_server:
+    image: jiajidev/express-server-sample:0.2
+    ports:
+      - "${PORT}:${PORT}"
+    environment:
+      - PORT=${PORT}
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=dbuser
+      - DB_PASS=dbpass
+      - DB_DB=hotel
+      - WAIT_HOSTS=mysql:3306
+    
