@@ -1,0 +1,1 @@
+sudo docker push jiajidev/express-server-sample:$1
