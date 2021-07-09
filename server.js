@@ -20,7 +20,7 @@ app.get("/json-count", async (req, res) => {
 app.get("/latest-json", async (req, res) => {
   const count = await getJsonCount()
   const lastestJson = await getLatestJson();
-  res.status(200).send(`<p>${count} json records</p><p>${lastestJson}</p>`);
+  res.status(200).send(`<p>${count} json records</p><p>latest: ${lastestJson}</p>`);
 });
 
 app.post("/post-json", (req, res) => {
